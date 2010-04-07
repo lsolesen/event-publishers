@@ -43,4 +43,8 @@ An example on how to use the publiser:
     $publiser->setPlace($place); // the place you want to publish to
     $publisher->publish($event);    
     
-Enjoy!
+Known issues
+--
+
+* No way to update the published material
+* Subscription could be added
