@@ -60,7 +60,7 @@ class Event_Publisher_Facebook implements Event_Publisher
             'description' => $event->getTeaser(),
             'privacy_type', // OPEN, CLOSED, SECRET
             'tagline' => $event->getTagline(),
-            'page_id' => $page_id
+            'page_id' => $this->page_id
         );
 
         try {
