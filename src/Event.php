@@ -71,11 +71,17 @@ interface Event
      */
     function getStartAt();
 
-
     /**
      * Gets end time
      *
      * @return object DateTime
      */
     function getEndAt();
+
+    /**
+     * Gets direct link
+     *
+     * @return link
+     */
+    function getLink();
 }
