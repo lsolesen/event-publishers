@@ -30,3 +30,17 @@ An example on how to use the publisher:
     $publiser->setPageId($page_id); // the page id you want to publish to
     $publisher->publish($event);
     
+Kultunaut
+--
+
+The kultunaut publisher requires PEAR's HTTP_Request2:
+
+    pear install HTTP_Request2
+    
+An example on how to use the publiser:
+
+    $publisher = new Event_Publisher_Kultunaut();
+    $publiser->setPlace($place); // the place you want to publish to
+    $publisher->publish($event);    
+    
+Enjoy!
