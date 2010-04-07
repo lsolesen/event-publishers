@@ -1,4 +1,5 @@
 <?php
+require_once 'config.local.php';
 require_once 'facebook.php';
 
 class VIH_Host implements Event_Host
