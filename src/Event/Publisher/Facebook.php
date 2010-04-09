@@ -57,7 +57,7 @@ class Event_Publisher_Facebook implements Event_Publisher
             'city' => $event->getHost()->getCity(),
             'phone' => $event->getHost()->getPhone(),
             'email' => $event->getHost()->getEmail(),
-            'description' => $event->getTeaser(),
+            'description' => $event->getTeaser() . "\n\n" . $event->getDescription(),
             'privacy_type', // OPEN, CLOSED, SECRET
             'tagline' => $event->getTagline(),
             'page_id' => $this->page_id
