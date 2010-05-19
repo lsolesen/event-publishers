@@ -29,7 +29,7 @@ class VIH_Host implements Event_Host
 
 class VIH_Event implements Event
 {
-      /**
+    /**
      * Gets the host of the event
      *
      * @return object Event_Host
@@ -139,8 +139,7 @@ class VIH_Event implements Event
 
 $event = new VIH_Event;
 
-$publisher = new Event_Publisher_Kultunaut();
-$publisher->setPlace($place); // the page id you want to publish to
+$publisher = new Event_Publisher_Kultunaut($place);
 $event_id = $publisher->publish($event);
 
 echo 'Published as #' . $event_id;

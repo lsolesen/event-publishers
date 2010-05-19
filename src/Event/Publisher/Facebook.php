@@ -4,22 +4,14 @@ class Event_Publisher_Facebook implements Event_Publisher
     protected $facebook;
     protected $page_id = null;
 
-    function __construct(Facebook $facebook)
+    function __construct(Facebook $facebook, $page_id)
     {
         $this->facebook = $facebook;
-    }
-
-    function setPageId($page_id)
-    {
         $this->page_id = $page_id;
     }
 
     function publish(Event $event)
     {
-        if ($this->page_id === null) {
-            throw new Exception('Set the page_id');
-        }
-
         // validate category and subcategory
 
         // validate time

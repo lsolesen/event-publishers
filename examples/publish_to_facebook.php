@@ -119,7 +119,6 @@ class VIH_Event implements Event
         return new DateTime('2010-04-08 16:30:00');
     }
 
-
     /**
      * Gets end time
      *
@@ -127,6 +126,11 @@ class VIH_Event implements Event
      */
     function getEndAt() {
         return new DateTime('2010-04-08 17:30:00');
+    }
+
+    function getLink()
+    {
+        return '';
     }
 }
 
@@ -149,8 +153,7 @@ try {
 
 $event = new VIH_Event;
 
-$publisher = new Event_Publisher_Facebook($facebook);
-$publisher->setPageId($page_id); // the page id you want to publish to
+$publisher = new Event_Publisher_Facebook($facebook, $page_id);
 $event_id = $publisher->publish($event);
 
 echo 'Published as #' . $event_id;

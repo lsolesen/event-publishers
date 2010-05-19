@@ -26,8 +26,7 @@ An example on how to use the publisher:
         return'<script type="text/javascript">window.open("http://www.facebook.com/authorize.php?api_key='.$facebook->api_key.'&v=1.0&ext_perm=create_event", "Permission");</script>'; echo'<meta http-equiv="refresh" content="0; URL=javascript:history.back();">'; exit;
     }
     
-    $publisher = new Event_Publisher_Facebook($client);
-    $publiser->setPageId($page_id); // the page id you want to publish to
+    $publisher = new Event_Publisher_Facebook($client, $page_id);
     $publisher->publish($event);
     
 Kultunaut
@@ -37,10 +36,9 @@ The kultunaut publisher requires PEAR's HTTP_Request2:
 
     pear install HTTP_Request2
     
-An example on how to use the publiser:
+An example on how to use the publisher:
 
-    $publisher = new Event_Publisher_Kultunaut();
-    $publiser->setPlace($place); // the place you want to publish to
+    $publisher = new Event_Publisher_Kultunaut($place);
     $publisher->publish($event);    
     
 Known issues
@@ -48,3 +46,4 @@ Known issues
 
 * No way to update the published material
 * Subscription could be added
+* Add tests - how could I do that

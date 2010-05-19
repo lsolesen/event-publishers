@@ -3,11 +3,7 @@ class Event_Publisher_Kultunaut implements Event_Publisher
 {
     protected $place;
 
-    function __construct()
-    {
-    }
-
-    function setPlace($place)
+    function __construct($place)
     {
         $this->place = $place;
     }
