@@ -1,6 +1,7 @@
 <?php
-
+require_once 'config.local.php';
 require_once 'Doctrine/Common/ClassLoader.php';
+require_once 'Ilib/ClassLoader.php';
 
 $classLoader = new \Doctrine\Common\ClassLoader('Entities', __DIR__);
 $classLoader->register();
@@ -17,10 +18,10 @@ $config->setProxyDir(__DIR__ . '/Proxies');
 $config->setProxyNamespace('Proxies');
 
 $connectionOptions = array(
-    'dbname' => 'intraface',
-    'user' => 'root',
-    'password' => 'klan1n',
-    'host' => 'localhost',
+    'dbname' => $GLOBALS['db_name'],
+    'user' => $GLOBALS['db_user'],
+    'password' => $GLOBALS['db_password'],
+    'host' => $GLOBALS['db_host'],
     'driver' => 'pdo_mysql'
 );
 
@@ -30,3 +31,5 @@ $helpers = array(
     'db' => new \Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
     'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em, __DIR__ . '/Entities')
 );
+
+$helperSet = new \Symfony\Components\Console\Helper\HelperSet($helpers);

@@ -14,6 +14,7 @@ use Doctrine\Common\ClassLoader,
     Doctrine\ORM\Tools,
     SymfonyComponents\Yaml;
 
+require_once 'config.local.php';
 require 'Event.php';
 require 'Entities/Event.php';
 require 'Doctrine/Common/ClassLoader.php';
@@ -43,11 +44,11 @@ $config->setMetadataCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
 
 // Database connection information
 $connectionOptions = array(
-    'dbname' => 'intraface',
-    'user' => 'root',
-    'password' => 'klan1n',
-    'host' => 'localhost',
-    'driver' => 'pdo_mysql',
+    'dbname' => $GLOBALS['db_name'],
+    'user' => $GLOBALS['db_user'],
+    'password' => $GLOBALS['db_password'],
+    'host' => $GLOBALS['db_host'],
+    'driver' => 'pdo_mysql'
 );
 
 // Create EntityManager
